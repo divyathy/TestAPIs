@@ -24,7 +24,7 @@ public class RestAPIs {
     @Test
     public void testEmployeeAPI(){
                Response response=
-                given().log().everything().
+                given().log().ifValidationFails().
                 when().
                 get(employeesAPI.getEndpointURI()).
                 then().assertThat().statusCode(SC_OK).extract().response();
